@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/sdbus-cpp-${PV}/COPYING;md5=1803fa9c2c3ce8
 
 inherit cmake pkgconfig systemd ptest python3native
 
-DEPENDS = "expat ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd', 'meson-native ninja-native git-native gperf-native gettext-native util-linux glibc libcap', d)}"
+DEPENDS += "expat ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd', 'meson-native ninja-native git-native gperf-native gettext-native util-linux glibc libcap', d)}"
 RDEPENDS_${PN} = "${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'libsystemd', 'glibc libcap', d)}"
 
 SRC_URI = "git://github.com/Kistler-Group/sdbus-cpp.git;protocol=https;destsuffix=sdbus-cpp-${PV};branch=master;tag=v${PV}"
