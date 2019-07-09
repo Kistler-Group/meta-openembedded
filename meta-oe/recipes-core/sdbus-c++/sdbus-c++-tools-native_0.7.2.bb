@@ -6,12 +6,9 @@ LIC_FILES_CHKSUM = "file://${WORKDIR}/git-tools/COPYING;md5=1803fa9c2c3ce8cb06b4
 
 inherit cmake native
 
-DEPENDS_${PN} = "expat"
+DEPENDS += "expat"
 RDEPENDS_${PN} = "expat"
 
-BRANCH = "master"
-TAG = "v${PV}"
-
-SRC_URI = "git://github.com/Kistler-Group/sdbus-cpp.git;protocol=https;destsuffix=git-tools;branch=${BRANCH};tag=${TAG};subpath=tools"
+SRC_URI = "git://github.com/Kistler-Group/sdbus-cpp.git;protocol=https;destsuffix=git-tools;branch=master;tag=v${PV};subpath=tools"
 
 S = "${WORKDIR}/git-tools"
